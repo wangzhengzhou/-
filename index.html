@@ -33,7 +33,7 @@
         }
 
         .bg {
-            background: url(http://cloud.hunger-valley.com/music/public_tuijian_spring.jpg-small) no-repeat;
+            background: url(https://cloud.hunger-valley.com/music/public_tuijian_spring.jpg-small) no-repeat;
             background-size: cover;
             z-index: -1;
             position: absolute;
@@ -61,7 +61,7 @@
         .win {
             width: 48vh;
             height: 45vh;
-            background-image: url(http://cloud.hunger-valley.com/music/public_tuijian_spring.jpg-small) ;
+            background-image: url(https://cloud.hunger-valley.com/music/public_tuijian_spring.jpg-small) ;
             background-size: cover;
         }
 
@@ -368,7 +368,7 @@
             },
             render: function() {
                 var _this = this
-                $.getJSON('http://api.jirengu.com/fm/getChannels.php').done(function(data) {
+                $.getJSON('https://api.jirengu.com/fm/getChannels.php').done(function(data) {
                     _this.renderFooter(data)
                 }).fail(function() {
                     console.log('error...')
