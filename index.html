@@ -2,7 +2,6 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
     <meta charset="utf-8">
     <meta name="referrer" content="never">
@@ -34,7 +33,7 @@
         }
 
         .bg {
-            background: url(//cloud.hunger-valley.com/music/public_tuijian_spring.jpg-small) no-repeat;
+            background: url(http://cloud.hunger-valley.com/music/public_tuijian_spring.jpg-small) no-repeat;
             background-size: cover;
             z-index: -1;
             position: absolute;
@@ -62,7 +61,7 @@
         .win {
             width: 48vh;
             height: 45vh;
-            background-image: url(//cloud.hunger-valley.com/music/public_tuijian_spring.jpg-small) ;
+            background-image: url(http://cloud.hunger-valley.com/music/public_tuijian_spring.jpg-small) ;
             background-size: cover;
         }
 
@@ -369,7 +368,7 @@
             },
             render: function() {
                 var _this = this
-                $.getJSON('//api.jirengu.com/fm/getChannels.php').done(function(data) {
+                $.getJSON('https://jirenguapi.applinzi.com/fm/getChannels.php').done(function(data) {
                     _this.renderFooter(data)
                 }).fail(function() {
                     console.log('error...')
@@ -453,7 +452,7 @@
             },
             loadMusic:function(){
                 var _this = this
-                $.getJSON('//jirenguapi.applinzi.com/fm/getSong.php',{channel:this.channelId}).done(function(ret){
+                $.getJSON('https://jirenguapi.applinzi.com/fm/getSong.php',{channel:this.channelId}).done(function(ret){
                     _this.song = ret['song'][0]
                     _this.setMusic()
                     _this.loadLyric()
@@ -462,7 +461,7 @@
 
             loadLyric:function(){
                 var _this = this
-                $.getJSON('//jirenguapi.applinzi.com/fm/getLyric.php',{sid:this.song.sid}).done(function(ret){
+                $.getJSON('https://jirenguapi.applinzi.com/fm/getLyric.php',{sid:this.song.sid}).done(function(ret){
                     var lyric = ret.lyric
                     var lyricObj = {}
                     lyric.split('\n').forEach(function(line){//得到的歌词对象转化成数组
